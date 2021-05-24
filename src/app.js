@@ -6,6 +6,7 @@ const forecast = require('./utils/forecast')
 
 // Initialize the Express App
 const app = express()
+const port = process.env.PORT || 3000
 
 //Define paths for Express config
 const publicDIR = path.join(__dirname, '../public');
@@ -102,6 +103,6 @@ app.get('*', (req, res) => {
         errmessage: 'Page Not Found'
     })
 })
-app.listen(3000, () => {
-    console.log('Server is Up on Port 3000.')
+app.listen(port, () => {
+    console.log('Server is Up on Port ' + port + '.')
 })
